@@ -202,7 +202,7 @@
 		<?php echo $footer; ?>
 		<!--=== End Footer Version 1 ===-->
 	</div><!--/wrapper-->
-
+        <div id="divView"></div>
 	<!--=== Style Switcher ===-->
         <?php echo $switcher; ?>
 	<!--/style-switcher-->
@@ -243,7 +243,10 @@
 			GoogleMap.initGoogleMap();
 		}
                 function sendEmail(){
-                    alert("aaaaa");
+                    alert("1111");
+                    //location.href = 'gmail.php';
+                    $("#divView").load("gmail.php", {host_id : "aa",flagpage : "staff_view"}, function() {});
+                    
                 }
 	</script>
 	<!--[if lt IE 9]>
