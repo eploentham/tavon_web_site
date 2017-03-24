@@ -47,7 +47,8 @@
             <div class="menu-container">
                 <ul class="nav navbar-nav">
                     <!-- Home -->
-                    <li class="dropdown active"><a href="index.php" class="dropdown-toggle" data-toggle="dropdown">หน้าแรก</a></li>
+                    <li class="dropdown active"><a href="index.php" class="dropdown-toggle" >หน้าแรก</a></li>
+					<li class="dropdown active"><a href="about.php" class="dropdown-toggle" >เกี่ยวกับเรา</a></li>
                     <!-- End Home -->
                     <!-- Pages -->
                     <li class="dropdown mega-menu-fullwidth">

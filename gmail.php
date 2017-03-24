@@ -9,7 +9,7 @@ date_default_timezone_set('Etc/UTC');
 
 require 'phpmailer/PHPMailerAutoload.php';
 require 'phpmailer/class.phpmailer.php';
-//require_once ("phpmailer/class.phpmailer.php");
+require_once ("phpmailer/class.phpmailer.php");
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
 
@@ -26,7 +26,7 @@ $mail->SMTPDebug = 0;
 $mail->Debugoutput = 'html';
 
 //Set the hostname of the mail server
-$mail->Host = 'smtp-relay.gmail.com';
+$mail->Host = 'ssl://smtp.gmail.com';
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
@@ -43,43 +43,32 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-//$mail->Username = "ekapop@nakoyagarden.com";info@thaihotels.org.in
-$mail->Username = "info@thaihotels.org.in";
+$mail->Username = "eploentham@gmail.com";
 
 //Password to use for SMTP authentication
-//$mail->Password = "eploentham";
-$mail->Password = "Thahr30*";
+$mail->Password = "Gsdscitsigol";
 
 //Set who the message is to be sent from
-$mail->setFrom('info@thaihotels.org.in', 'Info Thaihotels(news)');
+$mail->setFrom('eploentham@gmail.com', 'eploentham Last');
 
 //Set an alternative reply-to address
 //$mail->addReplyTo('replyto@example.com', 'First Last');
 
 //Set who the message is to be sent to
-$mail->addAddress('eploentham@gmail.com', 'Ekapop Ploentham');
-//$mail->addAddress('info@thaihotels.org', 'Ekapop Ploentham');
+$mail->addAddress('ekapop@nakoyagarden.com', 'Ekapop Doe');
 
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test 777';
+$mail->Subject = 'PHPMailer GMail SMTP test';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('email_template.html'), dirname(__FILE__));
+$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
 
 //Attach an image file
-//$mail->addAttachment('https://drive.google.com/open?id=0B2BuGx9iUNkQaFNvWTY2RGpoVjQ');
-//$mail->addAttachment('http://nakoyasoft.com/tavon_web_site/assets/img/icons/icon_support.png');
-//$mail->addAttachment('http://nakoyasoft.com/tavon_web_site/assets/img/block_img/picture_one.jpg');
-//$mail->addAttachment('http://nakoyasoft.com/tavon_web_site/assets/img/block_img/picture_two.jpg');
-//$mail->addAttachment('http://nakoyasoft.com/tavon_web_site/assets/img/headliner/headliner_blue.jpg');
-//$mail->addAttachment('http://nakoyasoft.com/tavon_web_site/assets/img/block_img/middle_picture.jpg');
-//$mail->addAttachment('http://nakoyasoft.com/tavon_web_site/assets/img/block_img/right_picture.jpg');
-//$mail->addAttachment('http://nakoyasoft.com/tavon_web_site/assets/img/block_img/left_picture.jpg');
-//$mail->addAttachment('http://nakoyasoft.com/tavon_web_site/assets/img/logo/logo_blue.png');
+$mail->addAttachment('assets/img/phpmailer_mini.png');
 
 //send the message, check for errors
 if (!$mail->send()) {
